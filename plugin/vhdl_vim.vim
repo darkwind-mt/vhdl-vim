@@ -7,10 +7,17 @@ function! FT_vhdl()
     " shortcuts
     imap <buffer> ,, <=
     imap <buffer> .. =>
-    "map <Leader>vy :Viy<CR>
-    "map <Leader>vpc :Vic<CR>
-    "map <Leader>vpi :Vii<CR>
-    map <Leader>y :let @v = system(" " . shellescape(expand(g:vhdl_parser_parse_dir . "%")))
+
+    nmap <Leader>vy :let @v = shellescape(expand("%:p"))<CR>
+    nmap <Leader>vs :let @t = system("ruby " . g:vhdl_parser_parse_dir . "vhdl_parse_ret.rb " . @v . " signals")<CR>"tp
+    nmap <Leader>vc :let @t = system("ruby " . g:vhdl_parser_parse_dir . "vhdl_parse_ret.rb " . @v . " component")<CR>"tp
+    nmap <Leader>vi :let @t = system("ruby " . g:vhdl_parser_parse_dir . "vhdl_parse_ret.rb " . @v . " instantiation")<CR>"tp
+
+    imap <Leader>vy <Esc><Leader>vyi
+    imap <Leader>vs <Esc><Leader>vsi
+    imap <Leader>vc <Esc><Leader>vci
+    imap <Leader>vi <Esc><Leader>vii
+
 
     " abbreviations
     iabbr dt downto
