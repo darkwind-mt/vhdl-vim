@@ -1,4 +1,4 @@
-# vhdl-vim Plugin
+# vim-vhdl Plugin
 
 ## Installation Instructions
 
