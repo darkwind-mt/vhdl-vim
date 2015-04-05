@@ -22,7 +22,7 @@ You must also list a configuation line that specifies the location of the the
 
 ## Usage
 
-The follwoing commands are available in `insert` and `normal` modes:
+The following commands are available in `insert` and `normal` modes:
 
 1. `<Leader>vy` - *In the current VHDL file* copy the file location to the `@v`
    register for usage with the paste commands.
